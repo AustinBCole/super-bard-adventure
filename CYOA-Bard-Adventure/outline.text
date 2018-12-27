@@ -1,0 +1,24 @@
+Requirements:
+
+User chooses name for Bard Hero
+Bard hero has health that changes throughout the game
+Bard hero can collect a companion
+Bard hero has an inventory with collected items
+There is a puzzle that needs to be solved
+Each decision screen has a good, bad and a neutral choice OR a right and wrong choice for completing the puzzle
+Bard hero must use item or companion to solve puzzle
+User can restart easily
+Data is either persistent OR is uploaded to Firebase so that user can return mid-game to continue playing
+
+Required UI Elements:
+
+First Screen: TextView, TextField, Submission Button
+Inventory Screen: Collection view with each group of same items sharing cell, single sprite picture in each cell to represent items, two labels in each cell declaring the item name and number of item(s)
+General Scenes: TextView, 3 Decision Buttons, label at top declaring character health points
+
+Required Files:
+
+Person Struct
+Inventory Class
+Scene Struct
+UserDecision Class(Singleton)
