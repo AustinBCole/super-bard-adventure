@@ -90,21 +90,21 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3O-FV-a8Y">
                                 <rect key="frame" x="20" y="579" width="335" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Title"/>
                                 <connections>
                                     <action selector="badDecisionButtonAction:" destination="lAh-ok-2UL" eventType="touchUpInside" id="yau-ko-9g6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cv1-7z-G4e">
                                 <rect key="frame" x="20" y="541" width="335" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Title"/>
                                 <connections>
                                     <action selector="goodDecisionButtonAction:" destination="lAh-ok-2UL" eventType="touchUpInside" id="DZO-WA-Qmi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVb-nf-U5M">
                                 <rect key="frame" x="20" y="617" width="335" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Title"/>
                                 <connections>
                                     <action selector="neutralDecisionButtonAction:" destination="lAh-ok-2UL" eventType="touchUpInside" id="Ycb-Cl-dLv"/>
                                 </connections>

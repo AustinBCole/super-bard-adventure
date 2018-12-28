@@ -52,4 +52,18 @@ class UserDecisionModel {
         }
     }
     
+    func changeButtonTitles(condition: UserDecision, scene: String) -> String {
+        switch condition {
+        case .good:
+            guard let returnValue = goodButtonsDictionary["\(scene)"] else {return "Could not get title"}
+            return returnValue
+        case .bad:
+            guard let returnValue = badButtonsDictionary["\(scene)"] else {return "Could not get title"}
+            return returnValue
+        case .neutral:
+            guard let returnValue = neutralButtonsDictionary["\(scene)"] else {return "Could not get title"}
+            return returnValue
+        }
+    
+    }
 }

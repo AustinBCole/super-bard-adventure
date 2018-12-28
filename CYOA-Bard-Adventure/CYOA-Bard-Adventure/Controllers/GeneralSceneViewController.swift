@@ -27,12 +27,14 @@ class GeneralSceneViewController: UIViewController {
             do {
                 let data = try String.init(contentsOfFile: path)
                 storyTextView.text = data
-                return
             } catch {
                 NSLog("Error Decoding text from scene file. GeneralSceneViewController.goodDecisionButtonAction")
             }
-        }
+            goodDecisionButton.setTitle(UserDecisionModel.shared.changeButtonTitles(condition: .good, scene: "scene1"), for: .normal)
+            badDecisionButton.setTitle(UserDecisionModel.shared.changeButtonTitles(condition: .bad, scene: "scene1"), for: .normal)
+            neutralDecisionButton.setTitle(UserDecisionModel.shared.changeButtonTitles(condition: .neutral, scene: "scene1"), for: .normal)
         // Do any additional setup after loading the view.
+        }
     }
  
     @IBAction func goodDecisionButtonAction(_ sender: Any) {
@@ -66,7 +68,6 @@ class GeneralSceneViewController: UIViewController {
     @IBAction func neutralDecisionButtonAction(_ sender: Any) {
         scene = UserDecisionModel.shared.changeScene(condition: .neutral, sceneNumber: currentSceneNumber )
         guard let fileName = scene?.sceneName else {return}
-        print(fileName)
         
         guard let path = Bundle.main.path(forResource: fileName, ofType: "text") else{return}
         print(path)
