@@ -83,28 +83,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PdI-nb-vKQ">
-                                <rect key="frame" x="20" y="155.5" width="335" height="365.5"/>
+                                <rect key="frame" x="20" y="156" width="335" height="332"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3O-FV-a8Y">
-                                <rect key="frame" x="20" y="579" width="335" height="30"/>
-                                <state key="normal" title="Title"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r3O-FV-a8Y">
+                                <rect key="frame" x="20" y="557" width="335" height="41"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Title">
+                                            <attributes>
+                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="2" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="badDecisionButtonAction:" destination="lAh-ok-2UL" eventType="touchUpInside" id="yau-ko-9g6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cv1-7z-G4e">
-                                <rect key="frame" x="20" y="541" width="335" height="30"/>
-                                <state key="normal" title="Title"/>
-                                <connections>
-                                    <action selector="goodDecisionButtonAction:" destination="lAh-ok-2UL" eventType="touchUpInside" id="DZO-WA-Qmi"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVb-nf-U5M">
-                                <rect key="frame" x="20" y="617" width="335" height="30"/>
-                                <state key="normal" title="Title"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MVb-nf-U5M">
+                                <rect key="frame" x="20" y="606" width="335" height="41"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Title">
+                                            <attributes>
+                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="2" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="neutralDecisionButtonAction:" destination="lAh-ok-2UL" eventType="touchUpInside" id="Ycb-Cl-dLv"/>
                                 </connections>
@@ -127,36 +138,50 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IaU-l3-2it">
-                                <rect key="frame" x="235" y="121" width="120" height="14.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="ndc-Ea-Vbz"/>
-                                </constraints>
+                                <rect key="frame" x="235" y="121" width="120" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cv1-7z-G4e">
+                                <rect key="frame" x="20" y="508" width="335" height="41"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="title">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="2" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="goodDecisionButtonAction:" destination="lAh-ok-2UL" eventType="touchUpInside" id="DZO-WA-Qmi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="r3O-FV-a8Y" firstAttribute="top" secondItem="cv1-7z-G4e" secondAttribute="bottom" constant="8" id="4HR-d0-O24"/>
-                            <constraint firstItem="PdI-nb-vKQ" firstAttribute="leading" secondItem="5yY-xI-2AR" secondAttribute="leading" constant="20" id="6Yu-UU-ifs"/>
-                            <constraint firstItem="5yY-xI-2AR" firstAttribute="bottom" secondItem="MVb-nf-U5M" secondAttribute="bottom" constant="20" id="7Iy-xe-M16"/>
-                            <constraint firstItem="odT-gK-GJe" firstAttribute="top" secondItem="5yY-xI-2AR" secondAttribute="top" constant="5" id="BNB-e0-Pgu"/>
-                            <constraint firstItem="5yY-xI-2AR" firstAttribute="trailing" secondItem="IaU-l3-2it" secondAttribute="trailing" constant="20" id="Cz1-Tc-Suv"/>
-                            <constraint firstItem="MVb-nf-U5M" firstAttribute="top" secondItem="r3O-FV-a8Y" secondAttribute="bottom" constant="8" id="E4D-DQ-UbV"/>
-                            <constraint firstItem="IaU-l3-2it" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5yY-xI-2AR" secondAttribute="leading" symbolic="YES" id="F11-bk-Qqn"/>
-                            <constraint firstItem="cv1-7z-G4e" firstAttribute="leading" secondItem="5yY-xI-2AR" secondAttribute="leading" constant="20" id="GJr-Vx-eUr"/>
-                            <constraint firstItem="MVb-nf-U5M" firstAttribute="leading" secondItem="5yY-xI-2AR" secondAttribute="leading" constant="20" id="HEO-IX-8Nb"/>
-                            <constraint firstItem="5yY-xI-2AR" firstAttribute="trailing" secondItem="MVb-nf-U5M" secondAttribute="trailing" constant="20" id="KC9-29-qZ7"/>
-                            <constraint firstItem="5yY-xI-2AR" firstAttribute="trailing" secondItem="PdI-nb-vKQ" secondAttribute="trailing" constant="20" id="KYi-T2-ByD"/>
-                            <constraint firstItem="r3O-FV-a8Y" firstAttribute="leading" secondItem="5yY-xI-2AR" secondAttribute="leading" constant="20" id="Lvf-xp-rXg"/>
-                            <constraint firstItem="cv1-7z-G4e" firstAttribute="top" secondItem="PdI-nb-vKQ" secondAttribute="bottom" constant="20" id="VzN-8w-VJe"/>
-                            <constraint firstItem="IaU-l3-2it" firstAttribute="top" secondItem="odT-gK-GJe" secondAttribute="bottom" constant="8" id="f0y-O2-x6K"/>
-                            <constraint firstItem="odT-gK-GJe" firstAttribute="leading" secondItem="xtG-ML-EEl" secondAttribute="leading" id="iYM-Mi-CBr"/>
-                            <constraint firstItem="odT-gK-GJe" firstAttribute="centerX" secondItem="PdI-nb-vKQ" secondAttribute="centerX" id="lyy-kP-rhg"/>
-                            <constraint firstItem="5yY-xI-2AR" firstAttribute="trailing" secondItem="r3O-FV-a8Y" secondAttribute="trailing" constant="20" id="nkV-vD-sCc"/>
-                            <constraint firstItem="5yY-xI-2AR" firstAttribute="trailing" secondItem="cv1-7z-G4e" secondAttribute="trailing" constant="20" id="tz9-dW-dUQ"/>
-                            <constraint firstItem="PdI-nb-vKQ" firstAttribute="top" secondItem="IaU-l3-2it" secondAttribute="bottom" constant="20" id="xE6-OU-kZi"/>
+                            <constraint firstItem="odT-gK-GJe" firstAttribute="leading" secondItem="xtG-ML-EEl" secondAttribute="leading" id="2TC-w2-o5v"/>
+                            <constraint firstItem="PdI-nb-vKQ" firstAttribute="trailing" secondItem="cv1-7z-G4e" secondAttribute="trailing" id="2ZF-s6-zwv"/>
+                            <constraint firstItem="IaU-l3-2it" firstAttribute="trailing" secondItem="PdI-nb-vKQ" secondAttribute="trailing" id="3eb-L2-a95"/>
+                            <constraint firstItem="5yY-xI-2AR" firstAttribute="trailing" secondItem="cv1-7z-G4e" secondAttribute="trailing" constant="20" id="5gz-Pj-OUT"/>
+                            <constraint firstItem="r3O-FV-a8Y" firstAttribute="leading" secondItem="5yY-xI-2AR" secondAttribute="leading" constant="20" id="6oF-ug-Em7"/>
+                            <constraint firstItem="5yY-xI-2AR" firstAttribute="trailing" secondItem="r3O-FV-a8Y" secondAttribute="trailing" constant="20" id="93U-3U-X34"/>
+                            <constraint firstItem="PdI-nb-vKQ" firstAttribute="top" secondItem="IaU-l3-2it" secondAttribute="bottom" constant="20" id="9og-H1-PMr"/>
+                            <constraint firstItem="MVb-nf-U5M" firstAttribute="leading" secondItem="5yY-xI-2AR" secondAttribute="leading" constant="20" id="KRd-tx-mXN"/>
+                            <constraint firstItem="5yY-xI-2AR" firstAttribute="trailing" secondItem="MVb-nf-U5M" secondAttribute="trailing" constant="20" id="Kf3-xp-TV8"/>
+                            <constraint firstItem="IaU-l3-2it" firstAttribute="leading" secondItem="5yY-xI-2AR" secondAttribute="leading" constant="235" id="VsN-8P-pjm"/>
+                            <constraint firstItem="IaU-l3-2it" firstAttribute="top" secondItem="odT-gK-GJe" secondAttribute="bottom" constant="8" id="XUf-SL-gdG"/>
+                            <constraint firstItem="odT-gK-GJe" firstAttribute="top" secondItem="5yY-xI-2AR" secondAttribute="top" constant="5" id="Yhs-th-Dy3"/>
+                            <constraint firstItem="odT-gK-GJe" firstAttribute="centerX" secondItem="PdI-nb-vKQ" secondAttribute="centerX" id="a59-hF-kWS"/>
+                            <constraint firstItem="r3O-FV-a8Y" firstAttribute="top" secondItem="cv1-7z-G4e" secondAttribute="bottom" constant="8" id="acA-dq-mp7"/>
+                            <constraint firstItem="cv1-7z-G4e" firstAttribute="leading" secondItem="5yY-xI-2AR" secondAttribute="leading" constant="20" id="hf0-kv-yAI"/>
+                            <constraint firstItem="PdI-nb-vKQ" firstAttribute="leading" secondItem="cv1-7z-G4e" secondAttribute="leading" id="nCn-j1-lkh"/>
+                            <constraint firstItem="5yY-xI-2AR" firstAttribute="bottom" secondItem="MVb-nf-U5M" secondAttribute="bottom" constant="20" id="r8u-PV-aWH"/>
+                            <constraint firstItem="cv1-7z-G4e" firstAttribute="top" secondItem="PdI-nb-vKQ" secondAttribute="bottom" constant="20" id="rNn-i7-Mfy"/>
+                            <constraint firstItem="MVb-nf-U5M" firstAttribute="top" secondItem="r3O-FV-a8Y" secondAttribute="bottom" constant="8" id="vWP-MS-uVK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5yY-xI-2AR"/>
                     </view>

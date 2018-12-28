@@ -30,9 +30,14 @@ class GeneralSceneViewController: UIViewController {
             } catch {
                 NSLog("Error Decoding text from scene file. GeneralSceneViewController.goodDecisionButtonAction")
             }
-            goodDecisionButton.setTitle(UserDecisionModel.shared.changeButtonTitles(condition: .good, scene: "scene1"), for: .normal)
-            badDecisionButton.setTitle(UserDecisionModel.shared.changeButtonTitles(condition: .bad, scene: "scene1"), for: .normal)
-            neutralDecisionButton.setTitle(UserDecisionModel.shared.changeButtonTitles(condition: .neutral, scene: "scene1"), for: .normal)
+            goodDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeButtonTitles(condition: .good, scene: "scene1")), for: .normal)
+            goodDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
+            
+            badDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeButtonTitles(condition: .bad, scene: "scene1")), for: .normal)
+            badDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
+            
+            neutralDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeButtonTitles(condition: .neutral, scene: "scene1")), for: .normal)
+            neutralDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
         // Do any additional setup after loading the view.
         }
     }
