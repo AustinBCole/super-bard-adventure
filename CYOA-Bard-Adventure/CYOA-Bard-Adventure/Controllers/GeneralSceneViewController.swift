@@ -22,8 +22,16 @@ class GeneralSceneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         healthPointsLabel.text = UserDecisionModel.shared.healthPoints()
-        storytextView
-
+        if storyTextView.text.isEmpty {
+            guard let path = Bundle.main.path(forResource: "scene1", ofType: "text") else{return}
+            do {
+                let data = try String.init(contentsOfFile: path)
+                storyTextView.text = data
+                return
+            } catch {
+                NSLog("Error Decoding text from scene file. GeneralSceneViewController.goodDecisionButtonAction")
+            }
+        }
         // Do any additional setup after loading the view.
     }
  
