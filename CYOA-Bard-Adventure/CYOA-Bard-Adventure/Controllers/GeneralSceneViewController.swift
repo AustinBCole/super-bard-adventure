@@ -56,8 +56,10 @@ class GeneralSceneViewController: UIViewController {
     @IBAction func neutralDecisionButtonAction(_ sender: Any) {
         scene = UserDecisionModel.shared.changeScene(condition: .neutral, sceneNumber: currentSceneNumber )
         guard let fileName = scene?.sceneName else {return}
+        print(fileName)
         
         guard let path = Bundle.main.path(forResource: fileName, ofType: "text") else{return}
+        print(path)
         do {
             let data = try String.init(contentsOfFile: path)
             storyTextView.text = data

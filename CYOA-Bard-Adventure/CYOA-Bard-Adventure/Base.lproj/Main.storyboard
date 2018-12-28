@@ -20,7 +20,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hbW-Oo-Kcu">
                                 <rect key="frame" x="20" y="232" width="335" height="327"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">The sun sets as you approach the cave, your prison. You are a debtor whose new master has sent you to the lair of goblins, spiders and other beasts. Your goal is to make it out alive to carry as much loot as you can to your master. He had told you that there are precious gems inside, among other possible treasures. Escape from this task is not an option.  "Fail to return within a week", he had said, "and I will assume that you have escaped and will issue warrants for your capture. When you are captured, you will be castrated and sent to work in the palace as a servant."  Let us be off on the adventure! Oh, and before I forget, what is your name?</mutableString>
+                                <string key="text">The sun sets as you approach the cave, your prison. You are a debtor whose new master has sent you to the lair of goblins, spiders and other beasts. Your goal is to make it out alive to carry as much loot as you can to your master. He had told you that there are precious gems inside, among other possible treasures. Escape from this task is not an option.  "Fail to return within a week", he had said, "and I will assume that you have escaped and will issue warrants for your capture. When you are captured, you will be castrated and sent to work in the palace as a servant."  Let us be off on the adventure! Oh, and before I forget, what is your name?</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -106,7 +106,7 @@
                                 <rect key="frame" x="20" y="617" width="335" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="neutralDecisionButtonAction:" destination="lAh-ok-2UL" eventType="touchUpInside" id="vlw-9s-JaF"/>
+                                    <action selector="neutralDecisionButtonAction:" destination="lAh-ok-2UL" eventType="touchUpInside" id="Ycb-Cl-dLv"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odT-gK-GJe">
