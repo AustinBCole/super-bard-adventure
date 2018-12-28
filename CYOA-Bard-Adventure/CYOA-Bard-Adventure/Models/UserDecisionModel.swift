@@ -12,6 +12,7 @@ class UserDecisionModel {
     //MARK: Singleton
     static let shared = UserDecisionModel()
     private init() {}
+    let generalSceneVC = GeneralSceneViewController()
     
     let goodButtonsDictionary = ["scene1": "Go outside and fashion a torch", "scene2": "Hello"  , "scene3": "Go outside and fashion a torch"]
     let badButtonsDictionary = ["scene1": "Continue walking deeper into the cave despite the darkness", "scene2": "Hello"  , "scene3": "Go outside and fashion a torch"]
@@ -23,6 +24,11 @@ class UserDecisionModel {
         case good
         case bad
         case neutral
+    }
+    
+    func healthPoints() -> String {
+        guard let healthPoints = bardHero?.healthPoints else {return "5"}
+        return String(healthPoints)
     }
     
     func createHero (name: String) {

@@ -21,6 +21,8 @@ class GeneralSceneViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        healthPointsLabel.text = UserDecisionModel.shared.healthPoints()
+        storytextView
 
         // Do any additional setup after loading the view.
     }
