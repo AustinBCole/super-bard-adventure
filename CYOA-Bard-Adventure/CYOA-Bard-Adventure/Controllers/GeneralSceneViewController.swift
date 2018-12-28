@@ -26,7 +26,9 @@ class GeneralSceneViewController: UIViewController {
             guard let path = Bundle.main.path(forResource: "scene1", ofType: "text") else{return}
             do {
                 let data = try String.init(contentsOfFile: path)
-                storyTextView.text = data
+                guard let name = UserDecisionModel.shared.bardHero?.name else {return}
+                let updatedData = data.replacingOccurrences(of: "(mainCharacterName)", with: name)
+                storyTextView.text = updatedData
             } catch {
                 NSLog("Error Decoding text from scene file. GeneralSceneViewController.goodDecisionButtonAction")
             }
@@ -49,7 +51,9 @@ class GeneralSceneViewController: UIViewController {
         guard let path = Bundle.main.path(forResource: fileName, ofType: "text") else{return}
         do {
         let data = try String.init(contentsOfFile: path)
-            storyTextView.text = data
+            guard let name = UserDecisionModel.shared.bardHero?.name else {return}
+            let updatedData = data.replacingOccurrences(of: "(mainCharacterName)", with: name)
+            storyTextView.text = updatedData
             return
         } catch {
             NSLog("Error Decoding text from scene file. GeneralSceneViewController.goodDecisionButtonAction")
@@ -64,8 +68,9 @@ class GeneralSceneViewController: UIViewController {
         guard let path = Bundle.main.path(forResource: fileName, ofType: "text") else{return}
         do {
             let data = try String.init(contentsOfFile: path)
-            storyTextView.text = data
-            return
+            guard let name = UserDecisionModel.shared.bardHero?.name else {return}
+            let updatedData = data.replacingOccurrences(of: "(mainCharacterName)", with: name)
+            storyTextView.text = updatedData
         } catch {
             NSLog("Error Decoding text from scene file. GeneralSceneViewController.goodDecisionButtonAction")
         }
@@ -78,7 +83,9 @@ class GeneralSceneViewController: UIViewController {
         print(path)
         do {
             let data = try String.init(contentsOfFile: path)
-            storyTextView.text = data
+            guard let name = UserDecisionModel.shared.bardHero?.name else {return}
+            let updatedData = data.replacingOccurrences(of: "(mainCharacterName)", with: name)
+            storyTextView.text = updatedData
             return
         } catch {
             NSLog("Error Decoding text from scene file. GeneralSceneViewController.goodDecisionButtonAction")

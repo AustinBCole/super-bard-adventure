@@ -20,5 +20,6 @@ class FirstScreenViewController: UIViewController {
         
         guard let name = nameField.text, !name.isEmpty else {return}
         UserDecisionModel.shared.createHero(name: name)
+        
     }
 }
