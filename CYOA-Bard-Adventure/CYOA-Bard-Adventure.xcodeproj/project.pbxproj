@@ -12,7 +12,6 @@
 		A200517221D553920073034C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A200517121D553920073034C /* Assets.xcassets */; };
 		A200517521D553920073034C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A200517321D553920073034C /* LaunchScreen.storyboard */; };
 		A200517F21D5600C0073034C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200517E21D5600C0073034C /* Person.swift */; };
-		A200518121D5601B0073034C /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200518021D5601B0073034C /* Inventory.swift */; };
 		A200518321D560230073034C /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200518221D560230073034C /* Scene.swift */; };
 		A200518521D560310073034C /* UserDecisionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200518421D560310073034C /* UserDecisionModel.swift */; };
 		A200518721D5604B0073034C /* InventoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200518621D5604B0073034C /* InventoryCollectionViewController.swift */; };
@@ -35,7 +34,6 @@
 		A200517421D553920073034C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A200517621D553920073034C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A200517E21D5600C0073034C /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		A200518021D5601B0073034C /* Inventory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
 		A200518221D560230073034C /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		A200518421D560310073034C /* UserDecisionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDecisionModel.swift; sourceTree = "<group>"; };
 		A200518621D5604B0073034C /* InventoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryCollectionViewController.swift; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				A200517E21D5600C0073034C /* Person.swift */,
-				A200518021D5601B0073034C /* Inventory.swift */,
 				A200518221D560230073034C /* Scene.swift */,
 				A200518421D560310073034C /* UserDecisionModel.swift */,
 			);
@@ -206,7 +203,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A200518321D560230073034C /* Scene.swift in Sources */,
-				A200518121D5601B0073034C /* Inventory.swift in Sources */,
 				A200517F21D5600C0073034C /* Person.swift in Sources */,
 				A200518721D5604B0073034C /* InventoryCollectionViewController.swift in Sources */,
 				A200518B21D560730073034C /* GeneralSceneViewController.swift in Sources */,

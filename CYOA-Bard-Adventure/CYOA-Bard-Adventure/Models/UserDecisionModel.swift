@@ -6,13 +6,14 @@
 //  Copyright © 2018 Austin Cole. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class UserDecisionModel {
     //MARK: Singleton
     static let shared = UserDecisionModel()
     private init() {}
     let generalSceneVC = GeneralSceneViewController()
+    var inventoryItems: [InventoryItem]?
     
     let goodButtonsDictionary = ["scene1": "Go outside and fashion a torch", "scene2": "Hello"  , "scene3": "Go outside and fashion a torch"]
     let badButtonsDictionary = ["scene1": "Continue walking deeper into the cave despite the darkness", "scene2": "Hello"  , "scene3": "Go outside and fashion a torch"]
@@ -32,7 +33,11 @@ class UserDecisionModel {
     }
     
     func createHero (name: String) {
-        bardHero = Person(name: name, healthPoints: 5)
+        guard let spearImage = UIImage(named: "short_spear_pixel") else{return}
+        var spear = InventoryItem(name: "Spear", image: spearImage, quantity: 1)
+        inventoryItems?.append(spear)
+        guard let inventoryItems = inventoryItems else {return}
+        bardHero = Person(name: name, healthPoints: 5, inventory: inventoryItems)
     }
     
     func changeScene(condition: UserDecision, sceneNumber: Int) -> Scene {
