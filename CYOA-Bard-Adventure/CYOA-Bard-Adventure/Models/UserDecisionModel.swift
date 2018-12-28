@@ -27,8 +27,8 @@ class UserDecisionModel {
     }
     
     func healthPoints() -> String {
-        guard let healthPoints = bardHero?.healthPoints else {return "5"}
-        return String(healthPoints)
+        guard let healthPoints = bardHero?.healthPoints else {return "Health Points: 5"}
+        return "Health Points: \(String(healthPoints))"
     }
     
     func createHero (name: String) {

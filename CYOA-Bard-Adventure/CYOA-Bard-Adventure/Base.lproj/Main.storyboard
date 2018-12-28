@@ -20,16 +20,13 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hbW-Oo-Kcu">
                                 <rect key="frame" x="20" y="232" width="335" height="327"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="327" id="SNs-Mx-arR"/>
+                                </constraints>
                                 <string key="text">The sun sets as you approach the cave, your prison. You are a debtor whose new master has sent you to the lair of goblins, spiders and other beasts. Your goal is to make it out alive to carry as much loot as you can to your master. He had told you that there are precious gems inside, among other possible treasures. Escape from this task is not an option.  "Fail to return within a week", he had said, "and I will assume that you have escaped and will issue warrants for your capture. When you are captured, you will be castrated and sent to work in the palace as a servant."  Let us be off on the adventure! Oh, and before I forget, what is your name?</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name here..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qkr-Ps-BWG">
-                                <rect key="frame" x="20" y="579" width="335" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwD-rs-4HI">
                                 <rect key="frame" x="20" y="617" width="335" height="30"/>
                                 <state key="normal" title="Let the adventure begin!"/>
@@ -44,29 +41,33 @@
                                     <constraint firstAttribute="height" constant="128" id="GPM-Uj-u0T"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your name here..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uLC-2x-cJe">
+                                <rect key="frame" x="20" y="579" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="0Ro-Kq-qSg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="0Cq-bH-59f"/>
-                            <constraint firstItem="Qkr-Ps-BWG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="157-y4-5Cy"/>
                             <constraint firstItem="cwD-rs-4HI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3Nn-WZ-MuH"/>
                             <constraint firstItem="hbW-Oo-Kcu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4Uy-La-00v"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uLC-2x-cJe" secondAttribute="trailing" constant="20" id="4qj-GG-oS4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cwD-rs-4HI" secondAttribute="bottom" constant="20" id="85Y-TG-ieN"/>
-                            <constraint firstItem="Qkr-Ps-BWG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8Ux-bv-BD7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cwD-rs-4HI" secondAttribute="trailing" constant="20" id="G0r-wY-xGo"/>
                             <constraint firstItem="hbW-Oo-Kcu" firstAttribute="top" secondItem="0Ro-Kq-qSg" secondAttribute="bottom" constant="20" id="Mom-Lb-pW0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hbW-Oo-Kcu" secondAttribute="trailing" constant="20" id="NPO-VU-cQW"/>
-                            <constraint firstItem="Qkr-Ps-BWG" firstAttribute="top" secondItem="hbW-Oo-Kcu" secondAttribute="bottom" constant="20" id="OD5-Dm-xSq"/>
+                            <constraint firstItem="uLC-2x-cJe" firstAttribute="top" secondItem="hbW-Oo-Kcu" secondAttribute="bottom" constant="20" id="a8e-TG-S16"/>
                             <constraint firstItem="0Ro-Kq-qSg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="d8p-V9-jE0"/>
                             <constraint firstItem="0Ro-Kq-qSg" firstAttribute="centerX" secondItem="hbW-Oo-Kcu" secondAttribute="centerX" id="hcZ-xd-H6b"/>
-                            <constraint firstItem="Qkr-Ps-BWG" firstAttribute="centerX" secondItem="cwD-rs-4HI" secondAttribute="centerX" id="r2y-Xh-ekj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qkr-Ps-BWG" secondAttribute="trailing" constant="20" id="sjQ-se-TsB"/>
-                            <constraint firstItem="cwD-rs-4HI" firstAttribute="top" secondItem="Qkr-Ps-BWG" secondAttribute="bottom" constant="8" id="zeQ-qS-6el"/>
+                            <constraint firstItem="uLC-2x-cJe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tUs-Z0-Njk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="OZa-wk-qCH"/>
                     <connections>
-                        <outlet property="nameField" destination="Qkr-Ps-BWG" id="m7n-R5-Jo4"/>
+                        <outlet property="nameField" destination="uLC-2x-cJe" id="UOn-wV-VPf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -125,7 +126,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IaU-l3-2it">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IaU-l3-2it">
                                 <rect key="frame" x="235" y="121" width="120" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="ndc-Ea-Vbz"/>
