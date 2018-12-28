@@ -9,5 +9,5 @@
 import Foundation
 
 struct Scene {
-    
+    let sceneName: String
 }

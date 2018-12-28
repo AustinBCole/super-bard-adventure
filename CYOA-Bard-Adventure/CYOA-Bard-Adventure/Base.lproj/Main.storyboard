@@ -9,17 +9,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--First Screen View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CYOA_Bard_Adventure" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FirstScreenViewController" customModule="CYOA_Bard_Adventure" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hbW-Oo-Kcu">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hbW-Oo-Kcu">
                                 <rect key="frame" x="20" y="232" width="335" height="327"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">The sun sets as you approach the cave, your prison. You are a debtor whose new master has sent you to the lair of goblins, spiders and other beasts. Your goal is to make it out alive to carry as much loot as you can to your master. He had told you that there are precious gems inside, among other possible treasures. Escape from this task is not an option.  "Fail to return within a week", he had said, "and I will assume that you have escaped and will issue warrants for your capture. When you are captured, you will be castrated and sent to work in the palace as a servant."  Let us be off on the adventure! Oh, and before I forget, what is your name?</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -65,39 +66,48 @@
                     </view>
                     <navigationItem key="navigationItem" id="OZa-wk-qCH"/>
                     <connections>
-                        <outlet property="nameField" destination="Qkr-Ps-BWG" id="eJn-7m-gUh"/>
+                        <outlet property="nameField" destination="Qkr-Ps-BWG" id="m7n-R5-Jo4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1873" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--General Scene View Controller-->
         <scene sceneID="FU4-kt-uU5">
             <objects>
-                <viewController id="lAh-ok-2UL" sceneMemberID="viewController">
+                <viewController id="lAh-ok-2UL" customClass="GeneralSceneViewController" customModule="CYOA_Bard_Adventure" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xtG-ML-EEl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PdI-nb-vKQ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PdI-nb-vKQ">
                                 <rect key="frame" x="20" y="161.5" width="335" height="359.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3O-FV-a8Y">
                                 <rect key="frame" x="20" y="579" width="335" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="badDecisionButtonAction:" destination="lAh-ok-2UL" eventType="touchUpInside" id="yau-ko-9g6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cv1-7z-G4e">
                                 <rect key="frame" x="20" y="541" width="335" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="goodDecisionButtonAction:" destination="lAh-ok-2UL" eventType="touchUpInside" id="DZO-WA-Qmi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVb-nf-U5M">
                                 <rect key="frame" x="20" y="617" width="335" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="neutralDecisionButtonAction:" destination="lAh-ok-2UL" eventType="touchUpInside" id="vlw-9s-JaF"/>
+                                </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odT-gK-GJe">
                                 <rect key="frame" x="0.0" y="69" width="375" height="44"/>
@@ -151,10 +161,17 @@
                         <viewLayoutGuide key="safeArea" id="5yY-xI-2AR"/>
                     </view>
                     <navigationItem key="navigationItem" id="rYB-lj-NHI"/>
+                    <connections>
+                        <outlet property="badDecisionButton" destination="r3O-FV-a8Y" id="nSq-pW-Fha"/>
+                        <outlet property="goodDecisionButton" destination="cv1-7z-G4e" id="UKT-Gc-ie3"/>
+                        <outlet property="healthPointsLabel" destination="IaU-l3-2it" id="H4s-BM-yb1"/>
+                        <outlet property="neutralDecisionButton" destination="MVb-nf-U5M" id="HrO-Vz-i9f"/>
+                        <outlet property="storyTextView" destination="PdI-nb-vKQ" id="iKo-nP-6bf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sdV-tP-pga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3156" y="-655"/>
+            <point key="canvasLocation" x="3156" y="-655.32233883058473"/>
         </scene>
         <!--Title-->
         <scene sceneID="2Y4-jk-yX1">
