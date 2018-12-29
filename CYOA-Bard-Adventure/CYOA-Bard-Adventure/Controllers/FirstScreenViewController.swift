@@ -15,6 +15,11 @@ class FirstScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UserDecisionModel.shared.inventoryItems = []
+    }
 
     @IBAction func nameSubmission(_ sender: Any) {
         

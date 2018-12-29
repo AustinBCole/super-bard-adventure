@@ -13,7 +13,7 @@ class UserDecisionModel {
     static let shared = UserDecisionModel()
     private init() {}
     let generalSceneVC = GeneralSceneViewController()
-    var inventoryItems: [InventoryItem]?
+    var inventoryItems: [InventoryItem] = []
     
     let goodButtonsDictionary = ["scene1": "Go outside and fashion a torch", "scene2": "Hello"  , "scene3": "Go outside and fashion a torch"]
     let badButtonsDictionary = ["scene1": "Continue walking deeper into the cave despite the darkness", "scene2": "Hello"  , "scene3": "Go outside and fashion a torch"]
@@ -35,8 +35,7 @@ class UserDecisionModel {
     func createHero (name: String) {
         guard let spearImage = UIImage(named: "short_spear_pixel") else{return}
         var spear = InventoryItem(name: "Spear", image: spearImage, quantity: 1)
-        inventoryItems?.append(spear)
-        guard let inventoryItems = inventoryItems else {return}
+        inventoryItems.append(spear)
         bardHero = Person(name: name, healthPoints: 5, inventory: inventoryItems)
     }
     

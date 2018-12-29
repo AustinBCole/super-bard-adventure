@@ -24,6 +24,7 @@
 		A200519F21D580170073034C /* scene2.text in Resources */ = {isa = PBXBuildFile; fileRef = A200519C21D580170073034C /* scene2.text */; };
 		A20051A021D580170073034C /* scene101.text in Resources */ = {isa = PBXBuildFile; fileRef = A200519D21D580170073034C /* scene101.text */; };
 		A20051A421D6BC540073034C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A20051A321D6BC540073034C /* Default-568h@2x.png */; };
+		A20051A821D8033E0073034C /* InventoryCollectionViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20051A721D8033E0073034C /* InventoryCollectionViewCellController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		A200519C21D580170073034C /* scene2.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = scene2.text; sourceTree = "<group>"; };
 		A200519D21D580170073034C /* scene101.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = scene101.text; sourceTree = "<group>"; };
 		A20051A321D6BC540073034C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A20051A721D8033E0073034C /* InventoryCollectionViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryCollectionViewCellController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				A200518821D560600073034C /* FirstScreenViewController.swift */,
 				A200518A21D560730073034C /* GeneralSceneViewController.swift */,
 				A200518621D5604B0073034C /* InventoryCollectionViewController.swift */,
+				A20051A721D8033E0073034C /* InventoryCollectionViewCellController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				A200518321D560230073034C /* Scene.swift in Sources */,
 				A200517F21D5600C0073034C /* Person.swift in Sources */,
 				A200518721D5604B0073034C /* InventoryCollectionViewController.swift in Sources */,
+				A20051A821D8033E0073034C /* InventoryCollectionViewCellController.swift in Sources */,
 				A200518B21D560730073034C /* GeneralSceneViewController.swift in Sources */,
 				A200518921D560600073034C /* FirstScreenViewController.swift in Sources */,
 				A200518521D560310073034C /* UserDecisionModel.swift in Sources */,

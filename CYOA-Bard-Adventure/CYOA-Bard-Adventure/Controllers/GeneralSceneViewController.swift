@@ -91,7 +91,4 @@ class GeneralSceneViewController: UIViewController {
             NSLog("Error Decoding text from scene file. GeneralSceneViewController.goodDecisionButtonAction")
         }
     }
-    
-    
-    
 }
