@@ -15,86 +15,44 @@ class GeneralSceneViewController: UIViewController {
     @IBOutlet weak var badDecisionButton: UIButton!
     @IBOutlet weak var neutralDecisionButton: UIButton!
     
-    var currentSceneNumber = 000001
-    var scene: Scene?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        healthPointsLabel.text = UserDecisionModel.shared.healthPoints()
-        if storyTextView.text.isEmpty {
-            guard let path = Bundle.main.path(forResource: "scene1", ofType: "text") else{return}
-            do {
-                let data = try String.init(contentsOfFile: path)
-                guard let name = UserDecisionModel.shared.bardHero?.name else {return}
-                let updatedData = data.replacingOccurrences(of: "(mainCharacterName)", with: name)
-                storyTextView.text = updatedData
-            } catch {
-                NSLog("Error Decoding text from scene file. GeneralSceneViewController.goodDecisionButtonAction")
-            }
-            updateButtons()
+        UserDecisionModel.shared.currentSceneNumber = 0
+        UserDecisionModel.shared.scene = UserDecisionModel.shared.changeScene(condition: .good)
+        DispatchQueue.main.async {
+            self.healthPointsLabel.text = UserDecisionModel.shared.healthPoints()
+            self.storyTextView.text = UserDecisionModel.shared.fetchText()
+            print(UserDecisionModel.shared.fetchText())
+            self.updateButtons()
+        }
+        
         // Do any additional setup after loading the view.
         }
-    }
     func updateButtons() {
-        goodDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeButtonTitles(condition: .good, sceneNumber: currentSceneNumber)), for: .normal)
+        goodDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeButtonTitles(condition: .good)), for: .normal)
         goodDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        print(currentSceneNumber)
-        print(UserDecisionModel.shared.changeButtonTitles(condition: .good, sceneNumber: currentSceneNumber))
         
-        badDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeButtonTitles(condition: .bad, sceneNumber: currentSceneNumber)), for: .normal)
+        badDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeButtonTitles(condition: .bad)), for: .normal)
         badDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
         
-        neutralDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeButtonTitles(condition: .neutral, sceneNumber: currentSceneNumber)), for: .normal)
+        neutralDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeButtonTitles(condition: .neutral)), for: .normal)
         neutralDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
     }
  
     @IBAction func goodDecisionButtonAction(_ sender: Any) {
-        currentSceneNumber += 1
-        scene = UserDecisionModel.shared.changeScene(condition: .good, sceneNumber: currentSceneNumber )
-        guard let fileName = scene?.sceneName else {return}
-        print(currentSceneNumber)
-        guard let path = Bundle.main.path(forResource: fileName, ofType: "text") else{return}
-        do {
-        let data = try String.init(contentsOfFile: path)
-            guard let name = UserDecisionModel.shared.bardHero?.name else {return}
-            let updatedData = data.replacingOccurrences(of: "(mainCharacterName)", with: name)
-            storyTextView.text = updatedData
-        } catch {
-            NSLog("Error Decoding text from scene file. GeneralSceneViewController.goodDecisionButtonAction")
-        }
+        UserDecisionModel.shared.scene = UserDecisionModel.shared.changeScene(condition: .good)
+        storyTextView.text = UserDecisionModel.shared.fetchText()
         updateButtons()
     }
     
     @IBAction func badDecisionButtonAction(_ sender: Any) {
-        currentSceneNumber += 100
-        scene = UserDecisionModel.shared.changeScene(condition: .bad, sceneNumber: currentSceneNumber )
-        guard let fileName = scene?.sceneName else {return}
-        guard let path = Bundle.main.path(forResource: fileName, ofType: "text") else{return}
-        do {
-            let data = try String.init(contentsOfFile: path)
-            guard let name = UserDecisionModel.shared.bardHero?.name else {return}
-            let updatedData = data.replacingOccurrences(of: "(mainCharacterName)", with: name)
-            storyTextView.text = updatedData
-        } catch {
-            NSLog("Error Decoding text from scene file. GeneralSceneViewController.goodDecisionButtonAction")
-        }
+        UserDecisionModel.shared.scene = UserDecisionModel.shared.changeScene(condition: .bad)
+        storyTextView.text = UserDecisionModel.shared.fetchText()
         updateButtons()
     }
     @IBAction func neutralDecisionButtonAction(_ sender: Any) {
-        currentSceneNumber += 10000
-        scene = UserDecisionModel.shared.changeScene(condition: .neutral, sceneNumber: currentSceneNumber )
-        guard let fileName = scene?.sceneName else {return}
-        guard let path = Bundle.main.path(forResource: fileName, ofType: "text") else{return}
-        print(path)
-        do {
-            let data = try String.init(contentsOfFile: path)
-            guard let name = UserDecisionModel.shared.bardHero?.name else {return}
-            let updatedData = data.replacingOccurrences(of: "(mainCharacterName)", with: name)
-            storyTextView.text = updatedData
-            return
-        } catch {
-            NSLog("Error Decoding text from scene file. GeneralSceneViewController.goodDecisionButtonAction")
-        }
+        UserDecisionModel.shared.scene = UserDecisionModel.shared.changeScene(condition: .neutral)
+        storyTextView.text = UserDecisionModel.shared.fetchText()
         updateButtons()
     }
 }

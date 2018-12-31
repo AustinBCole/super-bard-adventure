@@ -14,6 +14,8 @@ class UserDecisionModel {
     private init() {}
     let generalSceneVC = GeneralSceneViewController()
     var inventoryItems: [InventoryItem] = []
+    var scene: Scene?
+    var currentSceneNumber = 0
     
     let goodButtonsDictionary = ["scene1": "Go outside and fashion a torch", "scene2": "Try to door handle to open the door gently"  , "scene3": "Take the tapestry off the wall and cover the crow with it.", "scene4" : "Attack the goblin", "scene5" : ""]
     let badButtonsDictionary = ["scene1": "Continue walking deeper into the cave despite the darkness", "scene2": "Hello"  , "scene3": "Go outside and fashion a torch", "scene4" : "", "scene5" : ""]
@@ -40,46 +42,53 @@ class UserDecisionModel {
         bardHero = Person(name: name, healthPoints: 5, inventory: inventoryItems)
     }
     
-    func changeScene(condition: UserDecision, sceneNumber: Int) -> Scene {
+    func changeScene(condition: UserDecision) -> Scene {
         switch condition {
         case .good:
-            let newSceneName = "scene\(sceneNumber + 1)"
+            currentSceneNumber += 1
+            let newSceneName = "scene\(currentSceneNumber)"
             let newScene = Scene(sceneName: newSceneName)
             return newScene
         case .bad:
-            let newSceneName = "scene\(sceneNumber + 100)"
+            currentSceneNumber += 100
+            let newSceneName = "scene\(currentSceneNumber)"
             let newScene = Scene(sceneName: newSceneName)
             return newScene
         case .neutral:
-            let newSceneName = "scene\(sceneNumber + 10000)"
+            currentSceneNumber += 1000
+            let newSceneName = "scene\(currentSceneNumber)"
             let newScene = Scene(sceneName: newSceneName)
             return newScene
         }
     }
     
-    func changeButtonTitles(condition: UserDecision, sceneNumber: Int) -> String {
+    func changeButtonTitles(condition: UserDecision) -> String {
         switch condition {
         case .good:
-            guard let returnValue = goodButtonsDictionary["scene\(sceneNumber)"] else {return "Could not get title"}
+            guard let returnValue = goodButtonsDictionary["scene\(currentSceneNumber)"] else {return "Could not get title"}
             return returnValue
         case .bad:
-            guard let returnValue = badButtonsDictionary["scene\(sceneNumber)"] else {return "Could not get title"}
+            guard let returnValue = badButtonsDictionary["scene\(currentSceneNumber)"] else {return "Could not get title"}
             return returnValue
         case .neutral:
-            guard let returnValue = neutralButtonsDictionary["scene\(sceneNumber)"] else {return "Could not get title"}
+            guard let returnValue = neutralButtonsDictionary["scene\(currentSceneNumber)"] else {return "Could not get title"}
             return returnValue
         }
     
     }
-//    func fetchText() {
-//        guard let path = Bundle.main.path(forResource: "scene\(currentSceneNumber)", ofType: "text") else {return}
-//        do {
-//            let data = try String.init(contentsOfFile: path)
-//            guard let name = UserDecisionModel.shared.bardHero?.name else {return}
-//            let updatedData = data.replacingOccurrences(of: "(mainCharacterName)", with: name)
-//            storyTextView.text = updatedData
-//        } catch {
-//            NSLog("Error Decoding text from scene file. GeneralSceneViewController.goodDecisionButtonAction")
-//        }
-//    }
+    func fetchText() -> String {
+        var updatedData = ""
+        guard let fileName = scene?.sceneName else {return ""}
+        print(fileName)
+        print(currentSceneNumber)
+        guard let path = Bundle.main.path(forResource: fileName, ofType: "text") else {return ""}
+        do {
+            let data = try String.init(contentsOfFile: path)
+            guard let name = bardHero?.name else {return ""}
+            updatedData = data.replacingOccurrences(of: "(mainCharacterName)", with: name)
+        } catch {
+            NSLog("Error Decoding text from scene file. GeneralSceneViewController.goodDecisionButtonAction")
+        }
+        return updatedData
+    }
 }
