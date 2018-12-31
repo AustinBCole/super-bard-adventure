@@ -17,7 +17,6 @@ class GeneralSceneViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserDecisionModel.shared.currentSceneNumber = 0
         UserDecisionModel.shared.scene = UserDecisionModel.shared.changeScene(condition: .good)
         DispatchQueue.main.async {
             self.healthPointsLabel.text = UserDecisionModel.shared.healthPoints()
@@ -29,6 +28,8 @@ class GeneralSceneViewController: UIViewController {
         // Do any additional setup after loading the view.
         }
     func updateButtons() {
+        if UserDecisionModel.shared.currentSceneNumber == 6 {
+        }
         goodDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeButtonTitles(condition: .good)), for: .normal)
         goodDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
         
@@ -43,6 +44,7 @@ class GeneralSceneViewController: UIViewController {
         UserDecisionModel.shared.scene = UserDecisionModel.shared.changeScene(condition: .good)
         storyTextView.text = UserDecisionModel.shared.fetchText()
         updateButtons()
+        
     }
     
     @IBAction func badDecisionButtonAction(_ sender: Any) {
@@ -54,5 +56,14 @@ class GeneralSceneViewController: UIViewController {
         UserDecisionModel.shared.scene = UserDecisionModel.shared.changeScene(condition: .neutral)
         storyTextView.text = UserDecisionModel.shared.fetchText()
         updateButtons()
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "battleSegue" {
+            if UserDecisionModel.shared.currentSceneNumber != 5 {
+                return false
+            }
+        }
+        return true
     }
 }

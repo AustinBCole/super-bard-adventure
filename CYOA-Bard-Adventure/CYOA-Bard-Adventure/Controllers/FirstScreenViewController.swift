@@ -18,6 +18,7 @@ class FirstScreenViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        UserDecisionModel.shared.currentSceneNumber = 0
         UserDecisionModel.shared.inventoryItems = []
     }
 

@@ -22,6 +22,17 @@ class BattleSceneViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        monsterHealthPointsLabel.text = "5"
+        herNameLabel.text = UserDecisionModel.shared.bardHero?.name
+        
+        goodDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeButtonTitles(condition: .good)), for: .normal)
+        goodDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        badDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeButtonTitles(condition: .bad)), for: .normal)
+        badDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        neutralDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeButtonTitles(condition: .neutral)), for: .normal)
+        neutralDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
     }
 
 }
