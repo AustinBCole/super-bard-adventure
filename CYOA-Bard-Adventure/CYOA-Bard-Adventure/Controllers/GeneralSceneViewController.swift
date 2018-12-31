@@ -30,13 +30,13 @@ class GeneralSceneViewController: UIViewController {
     func updateButtons() {
         if UserDecisionModel.shared.currentSceneNumber == 6 {
         }
-        goodDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeButtonTitles(condition: .good)), for: .normal)
+        goodDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeGeneralSceneButtonTitles(condition: .good)), for: .normal)
         goodDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
         
-        badDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeButtonTitles(condition: .bad)), for: .normal)
+        badDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeGeneralSceneButtonTitles(condition: .bad)), for: .normal)
         badDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
         
-        neutralDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeButtonTitles(condition: .neutral)), for: .normal)
+        neutralDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeGeneralSceneButtonTitles(condition: .neutral)), for: .normal)
         neutralDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
     }
  

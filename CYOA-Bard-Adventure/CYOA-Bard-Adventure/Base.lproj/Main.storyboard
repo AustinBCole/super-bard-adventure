@@ -159,7 +159,7 @@
                                 </state>
                                 <connections>
                                     <action selector="goodDecisionButtonAction:" destination="lAh-ok-2UL" eventType="touchUpInside" id="DZO-WA-Qmi"/>
-                                    <segue destination="ZtH-Sr-hwg" kind="show" identifier="battleSegue" id="KqY-4e-cWG"/>
+                                    <segue destination="ZtH-Sr-hwg" kind="presentation" identifier="battleSegue" id="KqY-4e-cWG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -218,7 +218,7 @@
                                 <rect key="frame" x="67" y="328" width="240" height="128"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goblin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rld-Et-dGu">
-                                <rect key="frame" x="20" y="266" width="335" height="21"/>
+                                <rect key="frame" x="20" y="222" width="335" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="a9A-qF-Hf1"/>
                                 </constraints>
@@ -227,7 +227,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAo-eq-PmZ">
-                                <rect key="frame" x="20" y="295" width="335" height="21"/>
+                                <rect key="frame" x="20" y="251" width="335" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="wjM-Vp-YmT"/>
                                 </constraints>
@@ -259,6 +259,9 @@
                                     <constraint firstAttribute="height" constant="30" id="xVP-HG-mLn"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="goodDecisionButtonAction:" destination="ZtH-Sr-hwg" eventType="touchUpInside" id="H4o-fz-MlO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3U-5V-IdE">
                                 <rect key="frame" x="20" y="579" width="335" height="30"/>
@@ -266,6 +269,9 @@
                                     <constraint firstAttribute="height" constant="30" id="VcJ-xP-s62"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="badDecisionButtonAction:" destination="ZtH-Sr-hwg" eventType="touchUpInside" id="Lms-eu-hbJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCk-Wu-UUQ">
                                 <rect key="frame" x="20" y="617" width="335" height="30"/>
@@ -273,6 +279,9 @@
                                     <constraint firstAttribute="height" constant="30" id="Fcf-1l-Q97"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="neutralDecisionButtonAction:" destination="ZtH-Sr-hwg" eventType="touchUpInside" id="Y7b-u5-qbV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

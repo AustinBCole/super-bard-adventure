@@ -22,17 +22,27 @@ class BattleSceneViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        monsterHealthPointsLabel.text = "5"
+        UserDecisionModel.shared.createMonster(name: "Goblin", health: 3)
+        monsterHealthPointsLabel.text = "\(UserDecisionModel.shared.monsterHealth(damageTaken: nil))"
         herNameLabel.text = UserDecisionModel.shared.bardHero?.name
-        
-        goodDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeButtonTitles(condition: .good)), for: .normal)
+        heroHealthPointsLabel.text = "\(UserDecisionModel.shared.heroHealth(damageTaken: nil))"
+        goodDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeActionSceneButtonTitles(condition: .good)), for: .normal)
         goodDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
         
-        badDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeButtonTitles(condition: .bad)), for: .normal)
+        badDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeActionSceneButtonTitles(condition: .bad)), for: .normal)
         badDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
         
-        neutralDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeButtonTitles(condition: .neutral)), for: .normal)
+        neutralDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeActionSceneButtonTitles(condition: .neutral)), for: .normal)
         neutralDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
     }
-
+    
+    @IBAction func goodDecisionButtonAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func badDecisionButtonAction(_ sender: Any) {
+    }
+    
+    @IBAction func neutralDecisionButtonAction(_ sender: Any) {
+    }
 }

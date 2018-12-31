@@ -11,7 +11,8 @@ import UIKit
 struct Person {
     let name: String
     var healthPoints: Int
-    var inventory: [InventoryItem]
+    var isDead: Bool
+    var inventory: [InventoryItem]?
 }
 struct InventoryItem {
     let name: String
