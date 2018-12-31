@@ -25,6 +25,10 @@
 		A20051A021D580170073034C /* scene101.text in Resources */ = {isa = PBXBuildFile; fileRef = A200519D21D580170073034C /* scene101.text */; };
 		A20051A421D6BC540073034C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A20051A321D6BC540073034C /* Default-568h@2x.png */; };
 		A20051A821D8033E0073034C /* InventoryCollectionViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20051A721D8033E0073034C /* InventoryCollectionViewCellController.swift */; };
+		A20051AA21D81B9D0073034C /* BattleSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20051A921D81B9D0073034C /* BattleSceneViewController.swift */; };
+		A20051AE21D81E2D0073034C /* scene4.text in Resources */ = {isa = PBXBuildFile; fileRef = A20051AB21D81E2C0073034C /* scene4.text */; };
+		A20051AF21D81E2D0073034C /* scene5.text in Resources */ = {isa = PBXBuildFile; fileRef = A20051AC21D81E2C0073034C /* scene5.text */; };
+		A20051B021D81E2D0073034C /* scene3.text in Resources */ = {isa = PBXBuildFile; fileRef = A20051AD21D81E2D0073034C /* scene3.text */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		A200519D21D580170073034C /* scene101.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = scene101.text; sourceTree = "<group>"; };
 		A20051A321D6BC540073034C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A20051A721D8033E0073034C /* InventoryCollectionViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryCollectionViewCellController.swift; sourceTree = "<group>"; };
+		A20051A921D81B9D0073034C /* BattleSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleSceneViewController.swift; sourceTree = "<group>"; };
+		A20051AB21D81E2C0073034C /* scene4.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = scene4.text; sourceTree = "<group>"; };
+		A20051AC21D81E2C0073034C /* scene5.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = scene5.text; sourceTree = "<group>"; };
+		A20051AD21D81E2D0073034C /* scene3.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = scene3.text; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,9 @@
 				A200516E21D5538E0073034C /* Main.storyboard */,
 				A200519721D57EBB0073034C /* scene1.text */,
 				A200519C21D580170073034C /* scene2.text */,
+				A20051AD21D81E2D0073034C /* scene3.text */,
+				A20051AB21D81E2C0073034C /* scene4.text */,
+				A20051AC21D81E2C0073034C /* scene5.text */,
 				A200519D21D580170073034C /* scene101.text */,
 				A200519B21D580170073034C /* scene10001.text */,
 				A20051A121D6B6B30073034C /* Models */,
@@ -121,6 +132,7 @@
 			children = (
 				A200518821D560600073034C /* FirstScreenViewController.swift */,
 				A200518A21D560730073034C /* GeneralSceneViewController.swift */,
+				A20051A921D81B9D0073034C /* BattleSceneViewController.swift */,
 				A200518621D5604B0073034C /* InventoryCollectionViewController.swift */,
 				A20051A721D8033E0073034C /* InventoryCollectionViewCellController.swift */,
 			);
@@ -190,11 +202,14 @@
 				A200519A21D57EBB0073034C /* scene1.text in Resources */,
 				A20051A421D6BC540073034C /* Default-568h@2x.png in Resources */,
 				A200517521D553920073034C /* LaunchScreen.storyboard in Resources */,
+				A20051AF21D81E2D0073034C /* scene5.text in Resources */,
 				A20051A021D580170073034C /* scene101.text in Resources */,
+				A20051B021D81E2D0073034C /* scene3.text in Resources */,
 				A200517221D553920073034C /* Assets.xcassets in Resources */,
 				A200517021D5538E0073034C /* Main.storyboard in Resources */,
 				A200519821D57EBB0073034C /* firstScreen.text in Resources */,
 				A200519E21D580170073034C /* scene10001.text in Resources */,
+				A20051AE21D81E2D0073034C /* scene4.text in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A20051AA21D81B9D0073034C /* BattleSceneViewController.swift in Sources */,
 				A200518321D560230073034C /* Scene.swift in Sources */,
 				A200517F21D5600C0073034C /* Person.swift in Sources */,
 				A200518721D5604B0073034C /* InventoryCollectionViewController.swift in Sources */,

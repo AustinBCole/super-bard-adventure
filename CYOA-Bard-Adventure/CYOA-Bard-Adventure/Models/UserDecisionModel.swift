@@ -15,9 +15,10 @@ class UserDecisionModel {
     let generalSceneVC = GeneralSceneViewController()
     var inventoryItems: [InventoryItem] = []
     
-    let goodButtonsDictionary = ["scene1": "Go outside and fashion a torch", "scene2": "Hello"  , "scene3": "Go outside and fashion a torch"]
-    let badButtonsDictionary = ["scene1": "Continue walking deeper into the cave despite the darkness", "scene2": "Hello"  , "scene3": "Go outside and fashion a torch"]
-    let neutralButtonsDictionary = ["scene1": "Shout a greeting and hope someone does (or does not) respond", "scene2": "Hello"  , "scene3": "Go outside and fashion a torch"]
+    let goodButtonsDictionary = ["scene1": "Go outside and fashion a torch", "scene2": "Try to door handle to open the door gently"  , "scene3": "Take the tapestry off the wall and cover the crow with it.", "scene4" : "Attack the goblin", "scene5" : ""]
+    let badButtonsDictionary = ["scene1": "Continue walking deeper into the cave despite the darkness", "scene2": "Hello"  , "scene3": "Go outside and fashion a torch", "scene4" : "", "scene5" : ""]
+    let neutralButtonsDictionary = ["scene1": "Shout a greeting and hope someone does (or does not) respond", "scene2": "Hello"  , "scene3": "Go outside and fashion a torch", "scene4" : "", "scene5" : ""]
+    
     
     var bardHero: Person?
     
@@ -56,18 +57,29 @@ class UserDecisionModel {
         }
     }
     
-    func changeButtonTitles(condition: UserDecision, scene: String) -> String {
+    func changeButtonTitles(condition: UserDecision, sceneNumber: Int) -> String {
         switch condition {
         case .good:
-            guard let returnValue = goodButtonsDictionary["\(scene)"] else {return "Could not get title"}
+            guard let returnValue = goodButtonsDictionary["scene\(sceneNumber)"] else {return "Could not get title"}
             return returnValue
         case .bad:
-            guard let returnValue = badButtonsDictionary["\(scene)"] else {return "Could not get title"}
+            guard let returnValue = badButtonsDictionary["scene\(sceneNumber)"] else {return "Could not get title"}
             return returnValue
         case .neutral:
-            guard let returnValue = neutralButtonsDictionary["\(scene)"] else {return "Could not get title"}
+            guard let returnValue = neutralButtonsDictionary["scene\(sceneNumber)"] else {return "Could not get title"}
             return returnValue
         }
     
     }
+//    func fetchText() {
+//        guard let path = Bundle.main.path(forResource: "scene\(currentSceneNumber)", ofType: "text") else {return}
+//        do {
+//            let data = try String.init(contentsOfFile: path)
+//            guard let name = UserDecisionModel.shared.bardHero?.name else {return}
+//            let updatedData = data.replacingOccurrences(of: "(mainCharacterName)", with: name)
+//            storyTextView.text = updatedData
+//        } catch {
+//            NSLog("Error Decoding text from scene file. GeneralSceneViewController.goodDecisionButtonAction")
+//        }
+//    }
 }
