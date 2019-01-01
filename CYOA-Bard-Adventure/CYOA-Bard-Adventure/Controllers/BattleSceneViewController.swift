@@ -62,6 +62,7 @@ class BattleSceneViewController: UIViewController {
         if heroHealth <= 2{
             UserDecisionModel.shared.bardHero?.healthPoints = 0
             UserDecisionModel.shared.bardHero?.isDead = true
+            displayHeroIsDeadScreen()
         }
          else if monsterHealth <= 1 {
             UserDecisionModel.shared.monster?.healthPoints = 0
@@ -82,17 +83,30 @@ class BattleSceneViewController: UIViewController {
         if heroHealth <= 1 {
             UserDecisionModel.shared.bardHero?.healthPoints = 0
             UserDecisionModel.shared.bardHero?.isDead = true
-        }
+            displayHeroIsDeadScreen()
+        } else{
         neutralDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeActionSceneButtonTitles(condition: .neutral)), for: .normal)
         heroHealthPointsLabel.text = UserDecisionModel.shared.heroHealth(damageTaken: .small)
         neutralDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        }
     }
+    
+    func displayHeroIsDeadScreen() {
+        goodDecisionButton.isHidden = true
+        badDecisionButton.isHidden = true
+        neutralDecisionButton.isHidden = true
+        heroHealthPointsLabel.text = "You are dead."
+    }
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "goodHeroWins" || identifier == "badHeroWins" {
             if UserDecisionModel.shared.monster?.isDead == true {
                 UserDecisionModel.shared.currentSceneNumber = 6
                 return true
-            }
+                }
+        }
+        else if identifier == "restart" || identifier == "inventory" {
+            return true
         }
         return false
     }
