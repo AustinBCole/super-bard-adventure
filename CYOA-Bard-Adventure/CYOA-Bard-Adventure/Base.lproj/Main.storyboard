@@ -200,6 +200,44 @@
             </objects>
             <point key="canvasLocation" x="4095.1999999999998" y="-655.32233883058473"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="cYi-Ic-bu1">
+            <objects>
+                <viewController id="6EB-AB-2xk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ANI-3o-W3z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Are Dead." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72G-sP-L4s">
+                                <rect key="frame" x="20" y="40" width="335" height="607"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYf-iW-3fX">
+                                <rect key="frame" x="149" y="452" width="92" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Restart"/>
+                                <connections>
+                                    <segue destination="Nsl-XZ-PlW" kind="presentation" identifier="heroDies" id="OdF-PX-KTX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dCr-Ef-gbU" firstAttribute="trailing" secondItem="72G-sP-L4s" secondAttribute="trailing" constant="20" id="8Ih-Wj-RQX"/>
+                            <constraint firstItem="dCr-Ef-gbU" firstAttribute="bottom" secondItem="72G-sP-L4s" secondAttribute="bottom" constant="20" id="9e1-Nu-Bcx"/>
+                            <constraint firstItem="72G-sP-L4s" firstAttribute="top" secondItem="dCr-Ef-gbU" secondAttribute="top" constant="20" id="QQW-7b-td5"/>
+                            <constraint firstItem="72G-sP-L4s" firstAttribute="leading" secondItem="dCr-Ef-gbU" secondAttribute="leading" constant="20" id="e6I-ie-2PW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dCr-Ef-gbU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X82-nK-1JW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5791" y="-655"/>
+        </scene>
         <!--Battle Scene View Controller-->
         <scene sceneID="2c9-DV-7x8">
             <objects>
@@ -261,7 +299,7 @@
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="goodDecisionButtonAction:" destination="ZtH-Sr-hwg" eventType="touchUpInside" id="H4o-fz-MlO"/>
-                                    <segue destination="lAh-ok-2UL" kind="presentation" identifier="goodActionTerminated" id="QWg-8D-udb"/>
+                                    <segue destination="lAh-ok-2UL" kind="presentation" identifier="goodHeroWins" id="QWg-8D-udb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3U-5V-IdE">
@@ -272,7 +310,7 @@
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="badDecisionButtonAction:" destination="ZtH-Sr-hwg" eventType="touchUpInside" id="Lms-eu-hbJ"/>
-                                    <segue destination="lAh-ok-2UL" kind="presentation" identifier="badActionTerminated" id="iqt-kM-Gbu"/>
+                                    <segue destination="lAh-ok-2UL" kind="presentation" identifier="badHeroWins" id="iqt-kM-Gbu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCk-Wu-UUQ">
@@ -329,6 +367,7 @@
                         <outlet property="monsterImageView" destination="KJY-MF-AAC" id="GGo-xd-2br"/>
                         <outlet property="monsterNameLabel" destination="Rld-Et-dGu" id="gur-wW-G3g"/>
                         <outlet property="neutralDecisionButton" destination="bCk-Wu-UUQ" id="n2y-cy-c5F"/>
+                        <segue destination="6EB-AB-2xk" kind="presentation" id="UQA-Ri-UOU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qOC-Y8-hnS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -451,6 +490,7 @@
         <image name="yan-silva-torres-de-siqueira-kok" width="1943.7569580078125" height="1943.7569580078125"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="OdF-PX-KTX"/>
         <segue reference="iqt-kM-Gbu"/>
     </inferredMetricsTieBreakers>
 </document>

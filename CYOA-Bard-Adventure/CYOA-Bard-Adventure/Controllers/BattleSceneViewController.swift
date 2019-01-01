@@ -22,6 +22,7 @@ class BattleSceneViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        UserDecisionModel.shared.currentActionNumber = 1
         UserDecisionModel.shared.createMonster(name: "Goblin", health: 3)
         monsterHealthPointsLabel.text = "\(UserDecisionModel.shared.monsterHealth(damageTaken: nil))"
         herNameLabel.text = UserDecisionModel.shared.bardHero?.name
@@ -38,30 +39,51 @@ class BattleSceneViewController: UIViewController {
     }
     
     @IBAction func goodDecisionButtonAction(_ sender: Any) {
+        guard let monsterHealth = UserDecisionModel.shared.monster?.healthPoints else {return}
+        if monsterHealth <= 2 {
+            UserDecisionModel.shared.monster?.healthPoints = 0
+            UserDecisionModel.shared.monster?.isDead = true
+        }
+        else {
         goodDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeActionSceneButtonTitles(condition: .good)), for: .normal)
         monsterHealthPointsLabel.text = UserDecisionModel.shared.monsterHealth(damageTaken: .medium)
         goodDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        UserDecisionModel.shared.actionIsOver()
+        }
     }
     
     @IBAction func badDecisionButtonAction(_ sender: Any) {
+        guard let heroHealth = UserDecisionModel.shared.bardHero?.healthPoints else {return}
+        guard let monsterHealth = UserDecisionModel.shared.monster?.healthPoints else {return}
+        if heroHealth <= 2{
+            UserDecisionModel.shared.bardHero?.healthPoints = 0
+            UserDecisionModel.shared.bardHero?.isDead = true
+        }
+         else if monsterHealth <= 1 {
+            UserDecisionModel.shared.monster?.healthPoints = 0
+            UserDecisionModel.shared.monster?.isDead = true
+        }
+         
+         else {
         badDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeActionSceneButtonTitles(condition: .bad)), for: .normal)
         heroHealthPointsLabel.text = UserDecisionModel.shared.heroHealth(damageTaken: .medium)
         monsterHealthPointsLabel.text = UserDecisionModel.shared.monsterHealth(damageTaken: .small)
         badDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        UserDecisionModel.shared.actionIsOver()
+        }
     }
     
     @IBAction func neutralDecisionButtonAction(_ sender: Any) {
+        guard let heroHealth = UserDecisionModel.shared.bardHero?.healthPoints else {return}
+        if heroHealth <= 1 {
+            UserDecisionModel.shared.bardHero?.healthPoints = 0
+            UserDecisionModel.shared.bardHero?.isDead = true
+        }
         neutralDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeActionSceneButtonTitles(condition: .neutral)), for: .normal)
         heroHealthPointsLabel.text = UserDecisionModel.shared.heroHealth(damageTaken: .small)
         neutralDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        UserDecisionModel.shared.actionIsOver()
     }
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        guard let monsterHealthPoints = UserDecisionModel.shared.monster?.healthPoints else {return false}
-        if identifier == "goodActionTerminated" || identifier == "badActionTerminated" {
-            if monsterHealthPoints <= 0 {
+        if identifier == "goodHeroWins" || identifier == "badHeroWins" {
+            if UserDecisionModel.shared.monster?.isDead == true {
                 return true
             }
         }

@@ -94,12 +94,15 @@ class UserDecisionModel {
         switch condition {
         case .good:
             guard let returnValue = goodButtonsBattleDictionary["action\(currentActionNumber)"] else {return "Could not get title"}
+            currentActionNumber += 1
             return returnValue
         case .bad:
             guard let returnValue = badButtonsBattleDictionary["action\(currentActionNumber)"] else {return "Could not get title"}
+            currentActionNumber += 100
             return returnValue
         case .neutral:
             guard let returnValue = neutralButtonsBattleDictionary["action\(currentActionNumber)"] else {return "Could not get title"}
+            currentActionNumber += 10000
             return returnValue
         }
         
@@ -130,12 +133,12 @@ class UserDecisionModel {
         case .large:
             heroHealth -= 3
         }
+        bardHero?.healthPoints = heroHealth
         return "HP: \(heroHealth)"
     }
     
     func monsterHealth(damageTaken: AmountOfDamageTaken?) -> String {
         guard var monsterHealth = monster?.healthPoints else {return "Could not get monster health"}
-        print(damageTaken)
         guard let damageTaken = damageTaken else {return "HP: \(monsterHealth)"}
         switch damageTaken {
         case .small:
@@ -145,17 +148,7 @@ class UserDecisionModel {
         case .large:
             monsterHealth -= 3
         }
-        print(monsterHealth)
+        monster?.healthPoints = monsterHealth
         return "HP: \(monsterHealth)"
-    }
-    func actionIsOver() {
-        guard let monsterHealthPoints = monster?.healthPoints else {return}
-        if monsterHealthPoints <= 0 {
-            monster?.isDead = true
-        }
-        guard let heroHealthPoints = bardHero?.healthPoints else {return}
-        if heroHealthPoints <= 0 {
-            bardHero?.isDead = true
-        }
     }
 }
