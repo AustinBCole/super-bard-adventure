@@ -18,13 +18,13 @@ class UserDecisionModel {
     var currentSceneNumber = 0
     var currentActionNumber = 1
     
-    let goodButtonsDictionary = ["scene1": "Go outside and fashion a torch", "scene2": "Try to door handle to open the door gently"  , "scene3": "Take the tapestry off the wall and cover the crow with it.", "scene4" : "Attack the goblin", "scene5" : "Attack the goblin from far away, using the superior reach of your spear"]
-    let badButtonsDictionary = ["scene1": "Continue walking deeper into the cave despite the darkness", "scene2": "Hello"  , "scene3": "Go outside and fashion a torch", "scene4" : "", "scene5" : "Rush the goblin and pin it against the wall"]
-    let neutralButtonsDictionary = ["scene1": "Shout a greeting and hope someone does (or does not) respond", "scene2": "Hello"  , "scene3": "Go outside and fashion a torch", "scene4" : "", "scene5" : "Keep the goblin at a distance and stay purely on the defensive"]
+    let goodButtonsDictionary = ["scene1": "Go outside and fashion a torch", "scene2": "Try to door handle to open the door gently"  , "scene3": "Take the tapestry off the wall and cover the crow with it.", "scene4" : "Attack the goblin", "scene6" : "Grab the gems and make a hasty exit"]
+    let badButtonsDictionary = ["scene1": "Continue walking deeper into the cave despite the darkness", "scene2": "Hello"  , "scene3": "Go outside and fashion a torch", "scene4" : "", "scene6" : "Rush out the door to take the remaining goblins by surprise"]
+    let neutralButtonsDictionary = ["scene1": "Shout a greeting and hope someone does (or does not) respond", "scene2": "Hello"  , "scene3": "Go outside and fashion a torch", "scene4" : "", "scene6" : "Creep towards the door to try and get a peek around the corner"]
     
     let goodButtonsBattleDictionary = ["action1" : "Attack the goblin from far away, using the superior reach of your spear", "action2" : "Finish the gobin off with a thrust of your spear", "action102" : "Finish the goblin off with a thrust of your spear"]
     let badButtonsBattleDictionary = ["action1" : "Rush the goblin and pin it against the wall", "action2" : "Rush the goblin and pin it against the wall", "action101" : "Rush the goblin and pin it against the wall", "action201" : "Throw down your spear and punch the goblin in the face"]
-    let neutralButtonsBattleDictionary = ["action1" : "Keep the goblin at a distance and stay purely on the defensive", "action2" : "Keep the goblin at a distance and stay purely on the defensive", "action101" : "keep the goblin at a distance and stay purely on the defensive", "action20101" : "keep the goblin at a distance and stay purely on the defensive", "action30101" : "keep the goblin at a distance and stay purely on the defensive", "action40101" : "keep the goblin at a distance and stay purely on the defensive", "action10001" : "keep the goblin at a distance and stay purely on the defensive", "action20001" : "keep the goblin at a distance and stay purely on the defensive", "action30001" : "keep the goblin at a distance and stay purely on the defensive", "action40001" : "keep the goblin at a distance and stay purely on the defensive", "action50001" : "keep the goblin at a distance and stay purely on the defensive" ]
+    let neutralButtonsBattleDictionary = ["action1" : "Keep the goblin at a distance and stay purely on the defensive", "action2" : "Keep the goblin at a distance and stay purely on the defensive", "action101" : "keep the goblin at a distance and stay purely on the defensive", "action10101" : "keep the goblin at a distance and stay purely on the defensive", "action20101" : "keep the goblin at a distance and stay purely on the defensive", "action30101" : "keep the goblin at a distance and stay purely on the defensive",  "action10001" : "keep the goblin at a distance and stay purely on the defensive", "action20001" : "keep the goblin at a distance and stay purely on the defensive", "action30001" : "keep the goblin at a distance and stay purely on the defensive", "action40001" : "keep the goblin at a distance and stay purely on the defensive", "action50001" : "keep the goblin at a distance and stay purely on the defensive", "action10002" : "keep the goblin at a distance and stay purely on the defensive", "action20002" : "keep the goblin at a distance and stay purely on the defensive", "action30002" : "keep the goblin at a distance and stay purely on the defensive", "action40002" : "keep the goblin at a distance and stay purely on the defensive", "action50002" : "keep the goblin at a distance and stay purely on the defensive" ]
     
     
     var bardHero: Person?
@@ -40,20 +40,26 @@ class UserDecisionModel {
         case medium
         case large
     }
-    
     func healthPoints() -> String {
         guard let healthPoints = bardHero?.healthPoints else {return "Health Points: 5"}
         return "Health Points: \(String(healthPoints))"
     }
     
     func createHero (name: String) {
+        guard let rationImage = UIImage(named: "pixel_cheese") else {return}
         guard let spearImage = UIImage(named: "short_spear_pixel") else{return}
         var spear = InventoryItem(name: "Spear", image: spearImage, quantity: 1)
+        var ration = InventoryItem(name: "Ration", image: rationImage, quantity: 4)
         inventoryItems.append(spear)
+        inventoryItems.append(ration)
         bardHero = Person(name: name, healthPoints: 5, isDead: false, inventory: inventoryItems)
     }
     func createMonster(name: String, health: Int) {
         monster = Person(name: name, healthPoints: health, isDead: false, inventory: nil)
+    }
+    func createItem(name: String, image: UIImage, quantity: Int) {
+        let item = InventoryItem(name: name, image: image, quantity: quantity)
+        inventoryItems.append(item)
     }
     
     func changeScene(condition: UserDecision) -> Scene {

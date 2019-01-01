@@ -17,7 +17,9 @@ class GeneralSceneViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(UserDecisionModel.shared.currentSceneNumber)
         UserDecisionModel.shared.scene = UserDecisionModel.shared.changeScene(condition: .good)
+        print(UserDecisionModel.shared.scene)
         DispatchQueue.main.async {
             self.healthPointsLabel.text = UserDecisionModel.shared.healthPoints()
             self.storyTextView.text = UserDecisionModel.shared.fetchText()
@@ -27,9 +29,8 @@ class GeneralSceneViewController: UIViewController {
         // Do any additional setup after loading the view.
         }
     func updateButtons() {
-        if UserDecisionModel.shared.currentSceneNumber == 6 {
-        }
         goodDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeGeneralSceneButtonTitles(condition: .good)), for: .normal)
+        print(UserDecisionModel.shared.changeGeneralSceneButtonTitles(condition: .good))
         goodDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
         
         badDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeGeneralSceneButtonTitles(condition: .bad)), for: .normal)
@@ -40,6 +41,10 @@ class GeneralSceneViewController: UIViewController {
     }
  
     @IBAction func goodDecisionButtonAction(_ sender: Any) {
+        if UserDecisionModel.shared.scene?.sceneName == "scene1" {
+            guard let torchImage = UIImage(named: "pixel_torch") else {return}
+            UserDecisionModel.shared.createItem(name: "Torch", image: torchImage, quantity: 1)
+        }
         UserDecisionModel.shared.scene = UserDecisionModel.shared.changeScene(condition: .good)
         storyTextView.text = UserDecisionModel.shared.fetchText()
         updateButtons()
@@ -55,6 +60,16 @@ class GeneralSceneViewController: UIViewController {
         UserDecisionModel.shared.scene = UserDecisionModel.shared.changeScene(condition: .neutral)
         storyTextView.text = UserDecisionModel.shared.fetchText()
         updateButtons()
+    }
+    
+    func lifeOrDeath() {
+        if UserDecisionModel.shared.bardHero?.isDead == true {
+            goodDecisionButton.isHidden = true
+            badDecisionButton.isHidden = true
+            neutralDecisionButton.isHidden = true
+            storyTextView.text = "You are dead."
+            healthPointsLabel.text = "0"
+        }
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {

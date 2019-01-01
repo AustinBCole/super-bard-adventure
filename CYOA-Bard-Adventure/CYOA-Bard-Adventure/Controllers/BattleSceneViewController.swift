@@ -101,7 +101,6 @@ class BattleSceneViewController: UIViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "goodHeroWins" || identifier == "badHeroWins" {
             if UserDecisionModel.shared.monster?.isDead == true {
-                UserDecisionModel.shared.currentSceneNumber = 6
                 return true
                 }
         }
