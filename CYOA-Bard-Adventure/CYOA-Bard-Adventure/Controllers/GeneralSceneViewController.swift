@@ -70,12 +70,11 @@ class GeneralSceneViewController: UIViewController {
     }
     
     func gameOverScreen() {
-        if UserDecisionModel.shared.bardHero?.isDead == true {
+        if storyTextView.text.contains("You are dead.") {
             goodDecisionButton.isHidden = true
             badDecisionButton.isHidden = true
             neutralDecisionButton.isHidden = true
-            storyTextView.text = "You are dead."
-            healthPointsLabel.text = "0"
+            healthPointsLabel.text = "Health Points: 0"
         }
         else if storyTextView.text.contains("You have won the game!") {
             goodDecisionButton.isHidden = true
