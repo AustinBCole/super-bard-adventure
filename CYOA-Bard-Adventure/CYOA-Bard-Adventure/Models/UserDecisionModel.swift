@@ -94,15 +94,12 @@ class UserDecisionModel {
         switch condition {
         case .good:
             guard let returnValue = goodButtonsBattleDictionary["action\(currentActionNumber)"] else {return "Could not get title"}
-            currentActionNumber += 1
             return returnValue
         case .bad:
             guard let returnValue = badButtonsBattleDictionary["action\(currentActionNumber)"] else {return "Could not get title"}
-            currentActionNumber += 100
             return returnValue
         case .neutral:
             guard let returnValue = neutralButtonsBattleDictionary["action\(currentActionNumber)"] else {return "Could not get title"}
-            currentActionNumber += 10000
             return returnValue
         }
         

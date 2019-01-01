@@ -23,6 +23,7 @@ class BattleSceneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UserDecisionModel.shared.currentActionNumber = 1
+        print(UserDecisionModel.shared.currentActionNumber)
         UserDecisionModel.shared.createMonster(name: "Goblin", health: 3)
         monsterHealthPointsLabel.text = "\(UserDecisionModel.shared.monsterHealth(damageTaken: nil))"
         herNameLabel.text = UserDecisionModel.shared.bardHero?.name
@@ -35,10 +36,13 @@ class BattleSceneViewController: UIViewController {
         badDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
         
         neutralDecisionButton.setAttributedTitle(NSAttributedString(string: UserDecisionModel.shared.changeActionSceneButtonTitles(condition: .neutral)), for: .normal)
+        print(UserDecisionModel.shared.currentActionNumber)
+        print(UserDecisionModel.shared.changeActionSceneButtonTitles(condition: .neutral))
         neutralDecisionButton.titleLabel?.adjustsFontSizeToFitWidth = true
     }
     
     @IBAction func goodDecisionButtonAction(_ sender: Any) {
+        UserDecisionModel.shared.currentActionNumber += 1
         guard let monsterHealth = UserDecisionModel.shared.monster?.healthPoints else {return}
         if monsterHealth <= 2 {
             UserDecisionModel.shared.monster?.healthPoints = 0
@@ -52,6 +56,7 @@ class BattleSceneViewController: UIViewController {
     }
     
     @IBAction func badDecisionButtonAction(_ sender: Any) {
+        UserDecisionModel.shared.currentActionNumber += 100
         guard let heroHealth = UserDecisionModel.shared.bardHero?.healthPoints else {return}
         guard let monsterHealth = UserDecisionModel.shared.monster?.healthPoints else {return}
         if heroHealth <= 2{
@@ -72,6 +77,7 @@ class BattleSceneViewController: UIViewController {
     }
     
     @IBAction func neutralDecisionButtonAction(_ sender: Any) {
+        UserDecisionModel.shared.currentActionNumber += 10000
         guard let heroHealth = UserDecisionModel.shared.bardHero?.healthPoints else {return}
         if heroHealth <= 1 {
             UserDecisionModel.shared.bardHero?.healthPoints = 0
@@ -84,6 +90,7 @@ class BattleSceneViewController: UIViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "goodHeroWins" || identifier == "badHeroWins" {
             if UserDecisionModel.shared.monster?.isDead == true {
+                UserDecisionModel.shared.currentSceneNumber = 6
                 return true
             }
         }
