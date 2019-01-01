@@ -27,8 +27,9 @@
 		A20051A821D8033E0073034C /* InventoryCollectionViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20051A721D8033E0073034C /* InventoryCollectionViewCellController.swift */; };
 		A20051AA21D81B9D0073034C /* BattleSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20051A921D81B9D0073034C /* BattleSceneViewController.swift */; };
 		A20051AE21D81E2D0073034C /* scene4.text in Resources */ = {isa = PBXBuildFile; fileRef = A20051AB21D81E2C0073034C /* scene4.text */; };
-		A20051AF21D81E2D0073034C /* scene5.text in Resources */ = {isa = PBXBuildFile; fileRef = A20051AC21D81E2C0073034C /* scene5.text */; };
+		A20051AF21D81E2D0073034C /* scene6.text in Resources */ = {isa = PBXBuildFile; fileRef = A20051AC21D81E2C0073034C /* scene6.text */; };
 		A20051B021D81E2D0073034C /* scene3.text in Resources */ = {isa = PBXBuildFile; fileRef = A20051AD21D81E2D0073034C /* scene3.text */; };
+		A2F699B121DC2243002F33E4 /* scene7.text in Resources */ = {isa = PBXBuildFile; fileRef = A2F699B021DC2243002F33E4 /* scene7.text */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,8 +55,9 @@
 		A20051A721D8033E0073034C /* InventoryCollectionViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryCollectionViewCellController.swift; sourceTree = "<group>"; };
 		A20051A921D81B9D0073034C /* BattleSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleSceneViewController.swift; sourceTree = "<group>"; };
 		A20051AB21D81E2C0073034C /* scene4.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = scene4.text; sourceTree = "<group>"; };
-		A20051AC21D81E2C0073034C /* scene5.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = scene5.text; sourceTree = "<group>"; };
+		A20051AC21D81E2C0073034C /* scene6.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = scene6.text; sourceTree = "<group>"; };
 		A20051AD21D81E2D0073034C /* scene3.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = scene3.text; sourceTree = "<group>"; };
+		A2F699B021DC2243002F33E4 /* scene7.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = scene7.text; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +97,8 @@
 				A200519C21D580170073034C /* scene2.text */,
 				A20051AD21D81E2D0073034C /* scene3.text */,
 				A20051AB21D81E2C0073034C /* scene4.text */,
-				A20051AC21D81E2C0073034C /* scene5.text */,
+				A20051AC21D81E2C0073034C /* scene6.text */,
+				A2F699B021DC2243002F33E4 /* scene7.text */,
 				A200519D21D580170073034C /* scene101.text */,
 				A200519B21D580170073034C /* scene10001.text */,
 				A20051A121D6B6B30073034C /* Models */,
@@ -202,7 +205,8 @@
 				A200519A21D57EBB0073034C /* scene1.text in Resources */,
 				A20051A421D6BC540073034C /* Default-568h@2x.png in Resources */,
 				A200517521D553920073034C /* LaunchScreen.storyboard in Resources */,
-				A20051AF21D81E2D0073034C /* scene5.text in Resources */,
+				A2F699B121DC2243002F33E4 /* scene7.text in Resources */,
+				A20051AF21D81E2D0073034C /* scene6.text in Resources */,
 				A20051A021D580170073034C /* scene101.text in Resources */,
 				A20051B021D81E2D0073034C /* scene3.text in Resources */,
 				A200517221D553920073034C /* Assets.xcassets in Resources */,

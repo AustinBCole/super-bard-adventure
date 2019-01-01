@@ -45,9 +45,14 @@ class GeneralSceneViewController: UIViewController {
             guard let torchImage = UIImage(named: "pixel_torch") else {return}
             UserDecisionModel.shared.createItem(name: "Torch", image: torchImage, quantity: 1)
         }
+        if UserDecisionModel.shared.scene?.sceneName == "scene7" {
+            guard let gemImage = UIImage(named: "orage_gem_pixel") else {return}
+            UserDecisionModel.shared.createItem(name: "Gem", image: gemImage, quantity: 7)
+        }
         UserDecisionModel.shared.scene = UserDecisionModel.shared.changeScene(condition: .good)
         storyTextView.text = UserDecisionModel.shared.fetchText()
         updateButtons()
+        gameOverScreen()
         
     }
     
@@ -55,20 +60,27 @@ class GeneralSceneViewController: UIViewController {
         UserDecisionModel.shared.scene = UserDecisionModel.shared.changeScene(condition: .bad)
         storyTextView.text = UserDecisionModel.shared.fetchText()
         updateButtons()
+        gameOverScreen()
     }
     @IBAction func neutralDecisionButtonAction(_ sender: Any) {
         UserDecisionModel.shared.scene = UserDecisionModel.shared.changeScene(condition: .neutral)
         storyTextView.text = UserDecisionModel.shared.fetchText()
         updateButtons()
+        gameOverScreen()
     }
     
-    func lifeOrDeath() {
+    func gameOverScreen() {
         if UserDecisionModel.shared.bardHero?.isDead == true {
             goodDecisionButton.isHidden = true
             badDecisionButton.isHidden = true
             neutralDecisionButton.isHidden = true
             storyTextView.text = "You are dead."
             healthPointsLabel.text = "0"
+        }
+        else if storyTextView.text.contains("You have won the game!") {
+            goodDecisionButton.isHidden = true
+            badDecisionButton.isHidden = true
+            neutralDecisionButton.isHidden = true
         }
     }
     
