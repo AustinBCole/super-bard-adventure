@@ -83,7 +83,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PdI-nb-vKQ">
-                                <rect key="frame" x="20" y="156" width="335" height="332"/>
+                                <rect key="frame" x="20" y="112" width="335" height="376"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -121,7 +121,7 @@
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odT-gK-GJe">
-                                <rect key="frame" x="0.0" y="69" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="25" width="375" height="44"/>
                                 <items>
                                     <navigationItem id="53C-s5-KLb">
                                         <barButtonItem key="leftBarButtonItem" title="Restart" id="VJT-re-24C">
@@ -139,7 +139,7 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IaU-l3-2it">
-                                <rect key="frame" x="235" y="121" width="120" height="15"/>
+                                <rect key="frame" x="235" y="77" width="120" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -261,6 +261,7 @@
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="goodDecisionButtonAction:" destination="ZtH-Sr-hwg" eventType="touchUpInside" id="H4o-fz-MlO"/>
+                                    <segue destination="lAh-ok-2UL" kind="presentation" identifier="goodActionTerminated" id="QWg-8D-udb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3U-5V-IdE">
@@ -271,6 +272,7 @@
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="badDecisionButtonAction:" destination="ZtH-Sr-hwg" eventType="touchUpInside" id="Lms-eu-hbJ"/>
+                                    <segue destination="lAh-ok-2UL" kind="presentation" identifier="badActionTerminated" id="iqt-kM-Gbu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCk-Wu-UUQ">
@@ -448,4 +450,7 @@
         <image name="pixel_spearman" width="300" height="300"/>
         <image name="yan-silva-torres-de-siqueira-kok" width="1943.7569580078125" height="1943.7569580078125"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="iqt-kM-Gbu"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -16,13 +16,13 @@ class UserDecisionModel {
     var inventoryItems: [InventoryItem] = []
     var scene: Scene?
     var currentSceneNumber = 0
-    var currentActionNumber = 0
+    var currentActionNumber = 1
     
     let goodButtonsDictionary = ["scene1": "Go outside and fashion a torch", "scene2": "Try to door handle to open the door gently"  , "scene3": "Take the tapestry off the wall and cover the crow with it.", "scene4" : "Attack the goblin", "scene5" : "Attack the goblin from far away, using the superior reach of your spear"]
     let badButtonsDictionary = ["scene1": "Continue walking deeper into the cave despite the darkness", "scene2": "Hello"  , "scene3": "Go outside and fashion a torch", "scene4" : "", "scene5" : "Rush the goblin and pin it against the wall"]
     let neutralButtonsDictionary = ["scene1": "Shout a greeting and hope someone does (or does not) respond", "scene2": "Hello"  , "scene3": "Go outside and fashion a torch", "scene4" : "", "scene5" : "Keep the goblin at a distance and stay purely on the defensive"]
     
-    let goodButtonsBattleDictionary = ["action1" : "attack the goblin from far away, using the superior reach of your spear", "action2" : "Finish the gobin off with a thrust of your spear", "action102" : "Finish the goblin off with a thrust of your spear"]
+    let goodButtonsBattleDictionary = ["action1" : "Attack the goblin from far away, using the superior reach of your spear", "action2" : "Finish the gobin off with a thrust of your spear", "action102" : "Finish the goblin off with a thrust of your spear"]
     let badButtonsBattleDictionary = ["action1" : "Rush the goblin and pin it against the wall", "action2" : "Rush the goblin and pin it against the wall", "action101" : "Rush the goblin and pin it against the wall", "action201" : "Throw down your spear and punch the goblin in the face"]
     let neutralButtonsBattleDictionary = ["action1" : "Keep the goblin at a distance and stay purely on the defensive", "action2" : "Keep the goblin at a distance and stay purely on the defensive", "action101" : "keep the goblin at a distance and stay purely on the defensive", "action20101" : "keep the goblin at a distance and stay purely on the defensive", "action30101" : "keep the goblin at a distance and stay purely on the defensive", "action40101" : "keep the goblin at a distance and stay purely on the defensive", "action10001" : "keep the goblin at a distance and stay purely on the defensive", "action20001" : "keep the goblin at a distance and stay purely on the defensive", "action30001" : "keep the goblin at a distance and stay purely on the defensive", "action40001" : "keep the goblin at a distance and stay purely on the defensive", "action50001" : "keep the goblin at a distance and stay purely on the defensive" ]
     
@@ -93,7 +93,7 @@ class UserDecisionModel {
     func changeActionSceneButtonTitles(condition: UserDecision) -> String {
         switch condition {
         case .good:
-            guard let returnValue = badButtonsBattleDictionary["action\(currentActionNumber)"] else {return "Could not get title"}
+            guard let returnValue = goodButtonsBattleDictionary["action\(currentActionNumber)"] else {return "Could not get title"}
             return returnValue
         case .bad:
             guard let returnValue = badButtonsBattleDictionary["action\(currentActionNumber)"] else {return "Could not get title"}
@@ -108,8 +108,6 @@ class UserDecisionModel {
     func fetchText() -> String {
         var updatedData = ""
         guard let fileName = scene?.sceneName else {return ""}
-        print(fileName)
-        print(currentSceneNumber)
         guard let path = Bundle.main.path(forResource: fileName, ofType: "text") else {return ""}
         do {
             let data = try String.init(contentsOfFile: path)
@@ -137,6 +135,7 @@ class UserDecisionModel {
     
     func monsterHealth(damageTaken: AmountOfDamageTaken?) -> String {
         guard var monsterHealth = monster?.healthPoints else {return "Could not get monster health"}
+        print(damageTaken)
         guard let damageTaken = damageTaken else {return "HP: \(monsterHealth)"}
         switch damageTaken {
         case .small:
@@ -146,6 +145,17 @@ class UserDecisionModel {
         case .large:
             monsterHealth -= 3
         }
+        print(monsterHealth)
         return "HP: \(monsterHealth)"
+    }
+    func actionIsOver() {
+        guard let monsterHealthPoints = monster?.healthPoints else {return}
+        if monsterHealthPoints <= 0 {
+            monster?.isDead = true
+        }
+        guard let heroHealthPoints = bardHero?.healthPoints else {return}
+        if heroHealthPoints <= 0 {
+            bardHero?.isDead = true
+        }
     }
 }

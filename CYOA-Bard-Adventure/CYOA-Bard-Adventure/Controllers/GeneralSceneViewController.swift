@@ -21,7 +21,6 @@ class GeneralSceneViewController: UIViewController {
         DispatchQueue.main.async {
             self.healthPointsLabel.text = UserDecisionModel.shared.healthPoints()
             self.storyTextView.text = UserDecisionModel.shared.fetchText()
-            print(UserDecisionModel.shared.fetchText())
             self.updateButtons()
         }
         

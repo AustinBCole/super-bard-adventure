@@ -26,9 +26,7 @@ class InventoryCollectionViewController: UICollectionViewController {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? InventoryCollectionViewCellController else {fatalError("Could not DQ cell.")}
         cell.inventoryItemImage.image = UserDecisionModel.shared.inventoryItems[indexPath.row].image
         cell.inventoryItemName.text = UserDecisionModel.shared.inventoryItems[indexPath.row].name
-        print(UserDecisionModel.shared.inventoryItems[indexPath.row].name)
         cell.inventoryItemQuantity.text = "Quantity: \(UserDecisionModel.shared.inventoryItems[indexPath.row].quantity)"
-        print(UserDecisionModel.shared.inventoryItems[indexPath.row].quantity)
         
     
         // Configure the cell
